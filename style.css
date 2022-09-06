@@ -68,7 +68,7 @@ body{
     background-color: #7f5af0;
 }
 
-.o::after, .o::after{
+.o::after{
     content:'';
     position: absolute;
     width: 130px;
