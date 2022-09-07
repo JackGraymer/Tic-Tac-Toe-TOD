@@ -61,14 +61,21 @@ function checkWin() {
     let boardTie = boardX.length + boardO.length
 
     //Compares both players cells with winning combinations
-    board.forEach(element => {        
+    for(element of board){        
         if(element.every(i => boardX.includes(i))){
-            alert('player X won')
+            alert('player x won ' + element)
+            return
         }else if(element.every(i => boardO.includes(i))){
-            alert( 'player O won')
+            alert( 'player O won ' + element)
+            return
         // Checks for a Tie, if none won and board is full
-        }else if((boardTie) === 9){
-            alert('its a tie')
-        }
-    })
+        } /* if((boardTie) === 9 && board[8] == board[8]){
+            alert('its a tie' + element)
+            break
+        } */
+    }
+    if((boardTie) === 9 && board[8] == board[8]){
+        alert('its a tie')
+        
+    }
 }
