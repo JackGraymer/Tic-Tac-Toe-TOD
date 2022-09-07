@@ -63,10 +63,14 @@ function checkWin() {
     //Compares both players cells with winning combinations
     for(element of board){        
         if(element.every(i => boardX.includes(i))){
-            alert('player x won ' + element)
+            if(confirm('player X won ' + element)){
+                window.location.reload();  
+            }
             return
         }else if(element.every(i => boardO.includes(i))){
-            alert( 'player O won ' + element)
+            if(confirm('player O won ' + element)){
+                window.location.reload();  
+            }
             return
         // Checks for a Tie, if none won and board is full
         } /* if((boardTie) === 9 && board[8] == board[8]){
@@ -75,7 +79,9 @@ function checkWin() {
         } */
     }
     if((boardTie) === 9 && board[8] == board[8]){
-        alert('its a tie')
+        if(confirm('TIE game')){
+            window.location.reload();  
+        }
         
     }
 }
